@@ -5,74 +5,58 @@
 3. Dataset
 4. Methodology
 5. Results
-6. Conclusion
-7. Technologies Used
-How to Run
-Future Work
-Acknowledgements
+6. Technologies Used
+7. Acknowledgements
 
 ## Project Overview
-This capstone project was conducted as part of the completion requirements for the IBM Data Science Professional Certificate program hosted on Coursera. The primary goal of this project was to [briefly describe the main goal or purpose of your project, e.g., "build a predictive model for customer churn," "analyze sentiment in social media data," etc.].
+This capstone project was conducted as part of the completion requirements for the IBM Data Science Professional Certificate program hosted on Coursera. The primary goal of this project was to use data on past Space X Falcon 9 Rocket Launches to determine under what conditions the first stage of the rocket will land.
 
-Objectives
-The key objectives of this project were:
+## Objectives
+The key objective of this project was to be able to build a model that will be able to predict the binary class of, 'land', or 'not land' after proper analysis of the conditions that affect the landing of the first stage of Falcon 9 rockets. This could considerably reduce the costs of these rockets, as a landed first stage could be reused on another rocket for another space flight.
 
-[Objective 1]
-[Objective 2]
-[Objective 3]
-Dataset
-The dataset used for this project was sourced from [Source of Data]. It consists of [describe the dataset briefly, e.g., "10,000 records with 15 features each"]. The key features include:
+## Dataset
+The dataset used for this project was sourced from a Space X Representational State Transfer(REST) API; source: https://api.spacexdata.com/v4/launches/past , where we retrieved 90 records of 17 features,all related to Falcon 9 Launches . The key features include:
 
-[Feature 1]: Description
-[Feature 2]: Description
-[Feature 3]: Description
-Methodology
+1.FlightNumber 
+2.Date               
+3.BoosterVersion     
+4.PayloadMass        
+5.Orbit              
+6.LaunchSite         
+7.Outcome            
+8.Flights            
+9.GridFins           
+10.Reused - If the first stage was resued or not
+11.Legs               
+12.LandingPad       
+13.Block              
+14.ReusedCount        
+15.Serial             
+16.Longitude          
+17.Latitude
+        
+## Methodology Overview
 The project followed these steps:
 
-Data Preprocessing: [Describe how the data was cleaned, transformed, and prepared for analysis.]
-Exploratory Data Analysis (EDA): [Briefly describe the EDA process, including key findings and visualizations.]
-Modeling/Analysis: [Describe the models/algorithms/methods used, e.g., "Logistic Regression, K-Means Clustering, Time Series Forecasting," etc.]
-Evaluation: [Explain how the models were evaluated, including metrics used.]
-Results
+- Data Collection(Web Scraping & REST APIs)
+- Data Preprocessing
+- Exploratory Data Analysis (EDA), even with SQL
+- Modeling/Analysis with Python
+
+## Results
 The key findings of the project include:
 
-[Result 1]: [Description]
-[Result 2]: [Description]
-[Result 3]: [Description]
-Conclusion
-The project successfully [describe the outcomes and insights gained]. The results indicate that [briefly summarize key conclusions]. The objectives set out at the beginning were [achieved/not achieved], and the analysis provided [actionable insights, potential improvements, etc.].
+1. Launch sites have different success rates. CCAFS LC-40, has a success rate of 60 %, while KSC LC-39A and VAFB SLC 4E has a success rate of 77%.
+2. If you observe Payload Vs. Launch Site scatter point chart you will find for the VAFB-SLC launchsite there are no rockets launched for heavypayload mass(greater than 10000).
+3. In the LEO orbit the Success appears related to the number of flights; on the other hand, there seems to be no relationship between flight number when in GTO orbit.
+4. Landing sucess rate since 2013 kept increasing till 2020
 
-Technologies Used
+## Technologies Used
 This project was implemented using the following technologies and tools:
+1. Programming Language: Python
+2. Libraries/Packages: NumPy, Pandas, Scikit-learn, Folium, Plotly Dash
+3. Data Visualization: Matplotlib, Seaborn
+4. Environment: Jupyter Notebook
 
-Programming Language: [e.g., Python, R]
-Libraries/Packages: [e.g., NumPy, pandas, scikit-learn, TensorFlow]
-Data Visualization: [e.g., Matplotlib, Seaborn]
-Environment: [e.g., Jupyter Notebook, Google Colab]
-How to Run
-To run this project locally, follow these steps:
-
-Clone the repository:
-bash
-Copy code
-git clone https://github.com/your-username/your-repo-name.git
-Install the required packages:
-bash
-Copy code
-pip install -r requirements.txt
-Run the notebook/script:
-bash
-Copy code
-jupyter notebook your-notebook.ipynb
-OR
-bash
-Copy code
-python your-script.py
-Future Work
-Potential areas for further improvement or research include:
-
-[Future Work 1]: [Description]
-[Future Work 2]: [Description]
-[Future Work 3]: [Description]
-Acknowledgements
-I would like to thank [Your Mentor/Supervisor], [Institution], and all those who contributed to the success of this project. Special thanks to [Data Source] for providing the dataset used in this analysis.
+## Acknowledgements
+I would like to thank IBM, Skills Network Labs, Coursera, and all the tutors within this Profesional Data Science program. Your time and efforts are highly appreciated.
